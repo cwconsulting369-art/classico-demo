@@ -37,7 +37,26 @@
 <main id="top">
 
 <!-- ══════════════════════════════ Hero ══════════════════════════════ -->
+<!--
+  Bildquelle Hero-Hintergrund: Stock-Foto (Pexels License, frei kommerziell nutzbar,
+  keine Attribution-Pflicht), NICHT der echte Salon. Foto: Luis Mario Montalvo Gallegos,
+  "Vintage Barbershop Facade with Iconic Pole", https://www.pexels.com/photo/31162557/
+  ComfyUI/Tower waren beim Bau nicht erreichbar -> keine Eigengenerierung möglich,
+  daher lizenzfreies Symbolbild statt Fake-Content. Vor Livegang durch echtes Salonfoto
+  ersetzbar (data-img-role="replaceable-stock").
+-->
 <section class="hero">
+  <img
+    class="hero__bg"
+    data-img-role="replaceable-stock"
+    src="assets/img/hero-atmosphaere-1800.webp"
+    srcset="assets/img/hero-atmosphaere-500.webp 500w, assets/img/hero-atmosphaere-900.webp 900w, assets/img/hero-atmosphaere-1800.webp 1800w"
+    sizes="100vw"
+    alt=""
+    role="presentation"
+    loading="eager"
+    fetchpriority="high"
+    width="3456" height="5184">
   <div class="wrap hero__in">
     <div class="hero__badge" id="status">
       <span class="dot"></span>
@@ -47,12 +66,19 @@
     <h1>Klassischer Schnitt.<br><em>Ehrliches Handwerk.</em></h1>
     <p class="hero__lead">
       Barbershop und Friseursalon für Damen &amp; Herren mitten in Augsburg — Haarschnitt,
-      Bartpflege und Coloration von Tamam &amp; Ibo. Kein Termin nötig, einfach vorbeikommen.
+      Bartpflege und Coloration von
+      <!-- ⚠️ Platzhalter-Name: "Tamam & Ibo" ist NICHT verifiziert. Recherche (20.07.2026) findet
+           diese Namen nur im Kontext eines ANDEREN Augsburger Barbershops (Neuburger Str.,
+           Inhaber lt. Quelle: Nabil Al Mughrabi). Für Classico/Frauentorstraße 36 konnte kein
+           belastbarer Name ermittelt werden. Vor Livegang durch echten, bestätigten Namen ersetzen. -->
+      <span data-placeholder-name="true" title="Platzhalter — nicht verifiziert, vor Livegang bestätigen">Tamam &amp; Ibo</span>.
+      Kein Termin nötig, einfach vorbeikommen.
     </p>
     <div class="hero__cta">
       <a class="btn btn--brass" href="tel:+4982130897">📞 0821 30897</a>
       <a class="btn btn--ghost" href="#standort" style="color:#fff">Wegbeschreibung</a>
     </div>
+    <p class="hero__symbol">📷 Symbolbild — Atmosphäre, nicht der echte Salon</p>
   </div>
 </section>
 
@@ -69,13 +95,27 @@
 </div>
 
 <!-- ══════════════════════════════ Über uns ══════════════════════════════ -->
+<!--
+  Bildquelle Story-Foto: Stock-Foto (Pexels License, frei kommerziell nutzbar), NICHT der
+  echte Salon/die echten Barbiere. Foto: Th2city Santana, "Barber Cutting Man's Hair",
+  https://www.pexels.com/photo/1836983/ — Symbolbild für "Handwerk", ersetzbar vor Livegang.
+-->
 <section class="sec" id="ueber-uns">
   <div class="wrap story">
-    <div class="story__mark rise" aria-hidden="true"><span>C</span></div>
+    <figure class="story__mark rise" data-img-role="replaceable-stock">
+      <img
+        src="assets/img/story-handwerk-900.webp"
+        srcset="assets/img/story-handwerk-500.webp 500w, assets/img/story-handwerk-900.webp 900w, assets/img/story-handwerk-1800.webp 1800w"
+        sizes="(max-width: 980px) 90vw, 40vw"
+        alt="Symbolbild: Barbier beim Herrenhaarschnitt (Stock-Foto, nicht der echte Salon)"
+        loading="lazy" width="3456" height="5184">
+      <figcaption>📷 Symbolbild</figcaption>
+    </figure>
     <div class="rise">
       <span class="eyebrow">Über uns</span>
       <h2>Geführt mit Handwerk und Herz.</h2>
-      <p class="story__quote">„Bei <span class="story__names">Tamam &amp; Ibo</span> bist du in guten Händen."</p>
+      <!-- ⚠️ Platzhalter-Name: "Tamam & Ibo" nicht verifiziert, s. Kommentar im Hero oben. -->
+      <p class="story__quote">„Bei <span class="story__names" data-placeholder-name="true" title="Platzhalter — nicht verifiziert, vor Livegang bestätigen">Tamam &amp; Ibo</span> bist du in guten Händen."</p>
       <p>
         Classico ist ein familiär geführter Barbershop und Friseursalon in der Augsburger
         Frauentorstraße — bekannt für ehrliches Handwerk, faire Preise und eine entspannte
@@ -83,6 +123,49 @@
         hier wird jeder Schnitt mit Sorgfalt gemacht, ohne Termin, ohne Wartezeit-Stress.
       </p>
       <p>Bezahlt wird bar — ein Geldautomat ist nur wenige Schritte entfernt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ Atmosphäre (Symbolbilder) ══════════════════════════════ -->
+<!--
+  Alle 3 Fotos: Stock-Fotos (Pexels License, frei kommerziell nutzbar), NICHT der echte Salon.
+  Quellen: alexandre saraiva carniato (Bart, pexels.com/photo/6007400/) ·
+  RDNE Stock project (Kind, pexels.com/photo/7697639/) ·
+  Hook Tell (Werkzeug, pexels.com/photo/4449799/). Ersetzbar vor Livegang.
+-->
+<section class="sec sec--atmo" id="atmosphaere" aria-label="Atmosphäre (Symbolbilder)">
+  <div class="wrap">
+    <div class="sec__head center rise">
+      <span class="eyebrow center">Atmosphäre</span>
+      <h2>So fühlt sich Barbershop an</h2>
+      <p class="sec__sub">Symbolbilder — Eindruck der Atmosphäre, nicht Fotos aus dem echten Salon.</p>
+    </div>
+    <div class="atmo-grid rise">
+      <figure class="atmo-card" data-img-role="replaceable-stock">
+        <img src="assets/img/atmo-bart-900.webp"
+             srcset="assets/img/atmo-bart-500.webp 500w, assets/img/atmo-bart-900.webp 900w, assets/img/atmo-bart-1800.webp 1800w"
+             sizes="(max-width: 640px) 90vw, (max-width: 980px) 45vw, 30vw"
+             alt="Symbolbild: klassische Bartpflege mit Warmtuch (Stock-Foto, nicht der echte Salon)"
+             loading="lazy" width="5479" height="3653">
+        <figcaption>📷 Symbolbild</figcaption>
+      </figure>
+      <figure class="atmo-card" data-img-role="replaceable-stock">
+        <img src="assets/img/atmo-kind-900.webp"
+             srcset="assets/img/atmo-kind-500.webp 500w, assets/img/atmo-kind-900.webp 900w, assets/img/atmo-kind-1800.webp 1800w"
+             sizes="(max-width: 640px) 90vw, (max-width: 980px) 45vw, 30vw"
+             alt="Symbolbild: Kinderhaarschnitt im Barbershop (Stock-Foto, nicht der echte Salon)"
+             loading="lazy" width="4641" height="3094">
+        <figcaption>📷 Symbolbild</figcaption>
+      </figure>
+      <figure class="atmo-card" data-img-role="replaceable-stock">
+        <img src="assets/img/atmo-tools-900.webp"
+             srcset="assets/img/atmo-tools-500.webp 500w, assets/img/atmo-tools-900.webp 900w, assets/img/atmo-tools-1800.webp 1800w"
+             sizes="(max-width: 640px) 90vw, (max-width: 980px) 45vw, 30vw"
+             alt="Symbolbild: klassisches Barbier-Werkzeug — Schere, Kamm, Clipper (Stock-Foto, nicht der echte Salon)"
+             loading="lazy" width="4500" height="3000">
+        <figcaption>📷 Symbolbild</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -96,11 +179,16 @@
       <p class="sec__sub">Für Damen &amp; Herren — klassisch bis modern.</p>
     </div>
 
+    <!-- Preise nicht öffentlich bekannt (kein Online-Preisverzeichnis der Quelle) -> bewusst
+         "auf Anfrage" statt erfundener Euro-Beträge, s. Playbook Regel 4. -->
     <div class="services rise">
-      <div class="service"><div><div class="service__name">Herrenhaarschnitt</div><span class="service__note">Klassisch oder modern, nach Wunsch</span></div><div class="service__price">vor Ort</div></div>
-      <div class="service"><div><div class="service__name">Bartpflege &amp; Bartformen</div><span class="service__note">Präzise in Form gebracht</span></div><div class="service__price">vor Ort</div></div>
-      <div class="service"><div><div class="service__name">Damenhaarschnitt</div><span class="service__note">Individuell auf dich abgestimmt</span></div><div class="service__price">vor Ort</div></div>
-      <div class="service"><div><div class="service__name">Coloration</div><span class="service__note">Für einen frischen Look</span></div><div class="service__price">vor Ort</div></div>
+      <div class="service"><div><div class="service__name">Herrenhaarschnitt</div><span class="service__note">Klassisch oder modern, nach Wunsch</span></div><div class="service__price">auf Anfrage</div></div>
+      <div class="service"><div><div class="service__name">Bartpflege &amp; Bartformen</div><span class="service__note">Präzise in Form gebracht</span></div><div class="service__price">auf Anfrage</div></div>
+      <div class="service"><div><div class="service__name">Waschen, Schneiden &amp; Styling</div><span class="service__note">Der Rundum-Termin</span></div><div class="service__price">auf Anfrage</div></div>
+      <div class="service"><div><div class="service__name">Klassische Rasur</div><span class="service__note">Mit Rasiermesser &amp; Warmtuch</span></div><div class="service__price">auf Anfrage</div></div>
+      <div class="service"><div><div class="service__name">Damenhaarschnitt</div><span class="service__note">Individuell auf dich abgestimmt</span></div><div class="service__price">auf Anfrage</div></div>
+      <div class="service"><div><div class="service__name">Coloration</div><span class="service__note">Für einen frischen Look</span></div><div class="service__price">auf Anfrage</div></div>
+      <div class="service"><div><div class="service__name">Kinderhaarschnitt</div><span class="service__note">Bis 12 Jahre</span></div><div class="service__price">auf Anfrage</div></div>
     </div>
     <p class="services-note">Genaue Preise gibt's telefonisch oder direkt im Salon — nur Barzahlung.</p>
   </div>
@@ -154,6 +242,24 @@
           <span>86152 Augsburg — Route öffnen →</span>
         </div>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ Angebot (Sales-Pitch, AEVUM) ══════════════════════════════ -->
+<section class="sec sec--offer" id="angebot" aria-label="Paket-Vorschlag von AEVUM">
+  <div class="wrap">
+    <div class="offer-card rise">
+      <span class="eyebrow center">Vorschlag für Classico — von AEVUM</span>
+      <h2 class="offer-card__title">📦 Starter — €799 einmalig</h2>
+      <ul class="offer-card__list">
+        <li>Mobile-first Website (bis 5 Sektionen)</li>
+        <li>Leistungen &amp; Preisliste</li>
+        <li>Öffnungszeiten + Google Maps</li>
+        <li>Impressum &amp; Datenschutz</li>
+        <li>Deploy auf aevum-Subdomain (1 Jahr inklusive)</li>
+      </ul>
+      <p class="offer-card__note">Unverbindlicher Paket-Vorschlag zu diesem Design-Entwurf — keine Bestellung, kein Vertrag.</p>
     </div>
   </div>
 </section>

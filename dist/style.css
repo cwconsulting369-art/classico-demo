@@ -1,8 +1,11 @@
 /* ============================================================
    CLASSICO BARBERSHOP — Augsburg — Design-Entwurf
    Palette: warmes Anthrazit, Creme, Messing, gedecktes Barbershop-Rot.
-   Bewusst bildfrei (keine verifizierten echten Fotos verfügbar) —
-   typografisch/grafisch gelöst mit Barber-Pole-Streifen als Signatur.
+   Typografisch/grafisch gelöst mit Barber-Pole-Streifen als Signatur;
+   Fotos sind lizenzfreie Stock-Symbolbilder (Pexels License) für
+   Atmosphäre — NICHT der echte Salon. Siehe HTML-Kommentare bei jedem
+   <img> für Quelle/Fotograf. ComfyUI/Tower waren beim Bau nicht
+   erreichbar, daher keine Eigengenerierung.
    ============================================================ */
 :root {
   --ink:         #16130F;
@@ -116,13 +119,19 @@ p { margin: 0 0 1em; }
 .burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-/* ============================================================ Hero (grafisch, kein Foto) */
+/* ============================================================ Hero (Foto-Hintergrund, Symbolbild) */
 .hero { position: relative; min-height: 100svh; display: grid; align-items: center; isolation: isolate; background: var(--ink); overflow: hidden; }
+.hero__bg {
+  position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%;
+  object-fit: cover; object-position: 68% 38%;
+  filter: grayscale(.3) saturate(1.05) contrast(1.05) brightness(.72);
+}
 .hero::before {
-  content: ""; position: absolute; inset: 0; z-index: -1;
+  content: ""; position: absolute; inset: 0; z-index: -2;
   background:
-    radial-gradient(60% 50% at 82% 18%, rgba(176,138,78,.22), transparent 60%),
-    radial-gradient(50% 40% at 8% 88%, rgba(155,44,44,.24), transparent 60%);
+    linear-gradient(180deg, rgba(22,19,15,.55) 0%, rgba(22,19,15,.45) 45%, rgba(22,19,15,.88) 100%),
+    radial-gradient(60% 50% at 82% 18%, rgba(176,138,78,.28), transparent 60%),
+    radial-gradient(50% 40% at 8% 88%, rgba(155,44,44,.3), transparent 60%);
 }
 .hero::after {
   content: ""; position: absolute; z-index: -1; right: -6vw; top: -8vh; width: 46vw; height: 130vh;
@@ -130,6 +139,10 @@ p { margin: 0 0 1em; }
   opacity: .14; transform: rotate(6deg);
 }
 .hero__in { padding: calc(var(--bar-h) + var(--s16)) 0 var(--s20); color: #fff; }
+.hero__symbol {
+  margin: var(--s6) 0 0; font-size: var(--t-xs); color: rgba(255,255,255,.6);
+  letter-spacing: .02em;
+}
 .hero__badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); backdrop-filter: blur(8px); border-radius: 999px; padding: 7px 16px 7px 12px; font-size: .875rem; font-weight: 500; margin-bottom: var(--s6); }
 .hero__badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #6FCF7A; flex: none; }
 .hero__badge.is-closed .dot { background: var(--brass); }
@@ -156,21 +169,20 @@ p { margin: 0 0 1em; }
 .sec__sub { color: var(--ink-3); font-size: var(--t-lg); margin: 0; font-weight: 400; font-family: var(--display); font-style: italic; }
 .sec--dark .sec__sub { color: rgba(247,243,236,.7); }
 
-/* ============================================================ Über uns (grafisch statt Foto) */
+/* ============================================================ Über uns (Foto, Symbolbild) */
 .story { display: grid; grid-template-columns: .85fr 1.15fr; gap: var(--s16); align-items: center; }
 .story__mark {
   aspect-ratio: 4/5; border-radius: var(--r-lg); box-shadow: var(--sh-lg);
   background: var(--ink); position: relative; overflow: hidden;
-  display: grid; place-items: center;
+  margin: 0;
 }
-.story__mark::before {
-  content: ""; position: absolute; inset: 0;
-  background: repeating-linear-gradient(-45deg, var(--red) 0 20px, var(--ink) 20px 40px, var(--brass) 40px 60px, var(--ink) 60px 80px);
-  opacity: .9;
-}
-.story__mark span {
-  position: relative; z-index: 1; font-family: var(--cond); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700;
-  color: var(--paper); letter-spacing: .02em; text-shadow: 0 4px 20px rgba(0,0,0,.5);
+.story__mark img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
+.story__mark figcaption,
+.atmo-card figcaption {
+  position: absolute; right: var(--s3); bottom: var(--s3); z-index: 2;
+  background: rgba(22,19,15,.72); color: var(--paper); backdrop-filter: blur(4px);
+  font-family: var(--cond); font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  padding: 5px 10px; border-radius: var(--r-full); border: 1px solid rgba(247,243,236,.25);
 }
 .story__quote { font-family: var(--display); font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-style: italic; line-height: 1.35; color: var(--ink); margin: 0 0 var(--s6); }
 .story p { color: var(--ink-2); font-weight: 400; }
@@ -183,6 +195,34 @@ p { margin: 0 0 1em; }
 .service__note { display: block; font-size: var(--t-sm); color: var(--ink-3); margin-top: 2px; }
 .service__price { font-family: var(--cond); font-weight: 600; color: var(--red-dk); white-space: nowrap; }
 .services-note { text-align: center; margin-top: var(--s8); color: var(--ink-3); font-size: var(--t-sm); }
+
+/* ============================================================ Platzhalter-Namen (Inhaber/Team unverifiziert) */
+[data-placeholder-name] {
+  border-bottom: 1px dashed currentColor; cursor: help;
+}
+
+/* ============================================================ Atmosphäre (Symbolbild-Galerie) */
+.sec--atmo { background: var(--paper); }
+.atmo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s6); }
+.atmo-card {
+  position: relative; margin: 0; aspect-ratio: 4/3; border-radius: var(--r-lg);
+  overflow: hidden; box-shadow: var(--sh-sm); background: var(--ink);
+}
+.atmo-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s var(--ease); }
+.atmo-card:hover img { transform: scale(1.04); }
+
+/* ============================================================ Angebot (Sales-Pitch-Karte) */
+.sec--offer { padding-top: var(--s16); padding-bottom: var(--s16); }
+.offer-card {
+  max-width: 560px; margin-inline: auto; text-align: center;
+  background: var(--ink); color: var(--paper); border: 1px solid var(--brass);
+  border-radius: var(--r-lg); padding: var(--s12) var(--s8); box-shadow: var(--sh-md);
+}
+.offer-card__title { font-size: var(--t-2xl); margin: var(--s2) 0 var(--s6); color: #fff; }
+.offer-card__list { list-style: none; margin: 0 0 var(--s6); padding: 0; display: grid; gap: var(--s2); text-align: left; max-width: 380px; margin-inline: auto; }
+.offer-card__list li { position: relative; padding-left: 1.5em; color: rgba(247,243,236,.88); }
+.offer-card__list li::before { content: "•"; position: absolute; left: 0; color: var(--brass); font-weight: 700; }
+.offer-card__note { font-size: var(--t-xs); color: rgba(247,243,236,.55); margin: 0; font-style: italic; }
 
 /* ============================================================ Bewertungen */
 .rev-band { background: var(--ink); color: var(--paper); padding: var(--s20) 0; text-align: center; }
@@ -259,6 +299,7 @@ p { margin: 0 0 1em; }
   .contact { grid-template-columns: 1fr; gap: var(--s12); }
   .ft__grid { grid-template-columns: 1fr 1fr; gap: var(--s8); }
   .services { grid-template-columns: 1fr; }
+  .atmo-grid { grid-template-columns: 1fr 1fr; }
   .burger { display: flex; }
   #nav {
     position: fixed; inset: calc(var(--bar-h) + env(safe-area-inset-top)) 0 auto 0; z-index: 89;
@@ -287,4 +328,6 @@ p { margin: 0 0 1em; }
   .cinfo a, .ft ul a { display: inline-block; padding: 8px 0; }
   .pitch { font-size: 11px; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); }
   .trust__grid { grid-template-columns: 1fr 1fr; }
+  .atmo-grid { grid-template-columns: 1fr; gap: var(--s4); }
+  .offer-card { padding: var(--s8) var(--s6); }
 }
