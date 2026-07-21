@@ -24,7 +24,6 @@
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
       <a href="#ueber-uns">Über uns</a>
       <a href="#leistungen">Leistungen</a>
-      <a href="#bewertungen">Bewertungen</a>
       <a href="#standort">Standort</a>
     </nav>
     <a class="btn" href="tel:+4982130897">Anrufen</a>
@@ -61,7 +60,9 @@
     <div class="hero__badge" id="status">
       <span class="dot"></span>
       <span id="status-txt">Öffnungszeiten werden geprüft …</span>
-      <span class="hero__rating">★ <b>4,8</b> bei Google</span>
+      <!-- ⚠️ Kein Bewertungs-Badge: keine belegbare Google-Bewertung für diesen Betrieb
+           gefunden (Recherche 21.07.2026, s. Kommentar bei "Bewertungen"-Sektion unten /
+           Impressum). Playbook Regel 4: Social Proof nur mit Quelle+Link, sonst nicht anzeigen. -->
     </div>
     <h1>Klassischer Schnitt.<br><em>Ehrliches Handwerk.</em></h1>
     <p class="hero__lead">
@@ -70,7 +71,21 @@
       <!-- ⚠️ Platzhalter-Name: "Tamam & Ibo" ist NICHT verifiziert. Recherche (20.07.2026) findet
            diese Namen nur im Kontext eines ANDEREN Augsburger Barbershops (Neuburger Str.,
            Inhaber lt. Quelle: Nabil Al Mughrabi). Für Classico/Frauentorstraße 36 konnte kein
-           belastbarer Name ermittelt werden. Vor Livegang durch echten, bestätigten Namen ersetzen. -->
+           belastbarer Name ermittelt werden. Vor Livegang durch echten, bestätigten Namen ersetzen.
+           ZWEITE RECHERCHE (21.07.2026, Zweck: Google-Bewertungen einbauen): weiterhin KEIN Beleg
+           für "Tamam & Ibo" an dieser Adresse gefunden. Neuer, ungeklärter Befund: mehrere
+           Branchenverzeichnisse (Planity, friseurenet.de, friseure-friseursalons.de) führen den
+           Betrieb Frauentorstraße 36 als "Classico Barbershop und Friseursalon für Damen & Herren",
+           direkt geprüfte Quellen nennen aber KEINEN Inhaber. Gegenprobe über die Telefonnummer
+           0821 30897 (dieselbe Nummer wird für "Classico" UND für den Salon verwendet) ergibt bei
+           Das Örtliche (dasoertliche.de, direkt gelesen) den Firmennamen "Perfect Look
+           Friseursalon" für dieselbe Adresse+Nummer — d.h. selbst der BetriebsNAME ist nicht
+           sicher, nicht nur der Inhabername. Möglich: Umbenennung nicht überall aktualisiert, ODER
+           Verwechslung in den Verzeichnissen. Vor Livegang zwingend vor Ort/telefonisch klären,
+           welcher Name aktuell stimmt, bevor irgendein Name (Betrieb oder Inhaber) fix übernommen
+           wird. Quellen: https://www.planity.com/de-DE/classico-barbershop-und-friseursalon-fur-damen-herren-86152-augsburg ·
+           https://www.friseurenet.de/friseur/xitrp2vh/classico-friseursalon-augsburg ·
+           https://www.dasoertliche.de/Themen/Perfect-Look-Friseursalon-Augsburg-Innenstadt-Frauentorstr -->
       <span data-placeholder-name="true" title="Platzhalter — nicht verifiziert, vor Livegang bestätigen">Tamam &amp; Ibo</span>.
       Kein Termin nötig, einfach vorbeikommen.
     </p>
@@ -87,7 +102,7 @@
 <!-- ══════════════════════════════ Trust ══════════════════════════════ -->
 <div class="trust">
   <div class="wrap trust__grid">
-    <div class="trust__item"><b>4,8★ bei Google</b><span>Durchweg starke Bewertungen</span></div>
+    <div class="trust__item"><b>Familiär geführt</b><span>Handwerk mit Herz</span></div>
     <div class="trust__item"><b>Kein Termin nötig</b><span>Walk-in willkommen</span></div>
     <div class="trust__item"><b>Damen &amp; Herren</b><span>Für die ganze Familie</span></div>
     <div class="trust__item"><b>Nur Barzahlung</b><span>Bitte Bargeld mitbringen</span></div>
@@ -194,14 +209,19 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════ Bewertungen ══════════════════════════════ -->
-<div class="rev-band" id="bewertungen">
-  <div class="wrap-narrow rise">
-    <div class="stars">★★★★★</div>
-    <blockquote>Bester Barbier in Augsburg und Umgebung — faires Preis-Leistungs-Verhältnis, top Ergebnis.</blockquote>
-    <cite>Sinngemäß aus Google-Bewertungen, 4,8★ Gesamtschnitt</cite>
-  </div>
-</div>
+<!-- ⚠️ ENTFERNT (21.07.2026): Hier stand zuvor eine "Bewertungen"-Sektion mit erfundenem/
+     paraphrasiertem Zitat ("Sinngemäß aus Google-Bewertungen, 4,8★") ohne Quelle/Link — Verstoß
+     gegen Playbook Regel 4 ("Social Proof nur belegt: Google Places API → Rating + Anzahl mit
+     Quelle und Link, kein aggregateRating für Fremdplattform-Bewertungen"). Zweite Recherche
+     (21.07.2026) fand keinen eindeutig zuordenbaren Betrieb mit verifizierbarer Google-Bewertung
+     für Frauentorstraße 36 — u.a. weil selbst der Betriebsname unklar ist (s. Kommentar Hero/
+     Impressum: mehrere Verzeichnisse nennen "Classico", ein direkt gelesener Eintrag bei Das
+     Örtliche listet dieselbe Telefonnummer 0821 30897 unter "Perfect Look Friseursalon"). Direkt
+     eingesehene Verzeichnisse (Planity, friseurenet.de, Das Örtliche) zeigen für diese Adresse
+     0 Bewertungen. Andere Quellen (10/35 Rezensionen, 4,8★) waren nicht erreichbar/verifizierbar
+     (403/Timeout, u.a. eine sachfremde Domain — Scraper-Verdacht) → nicht verwendet. Vor Livegang:
+     Betrieb + Bewertungen direkt vor Ort/telefonisch verifizieren, dann ggf. mit echtem Link +
+     Quelle wieder einbauen. -->
 
 <!-- ══════════════════════════════ Standort ══════════════════════════════ -->
 <section class="sec" id="standort">
